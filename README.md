@@ -22,3 +22,8 @@ Siga estas etapas para executar o projeto usando `docker-compose`:
    ```bash
    docker-compose down
    ```
+
+6. Você pode acessar a aplicação diretamente no Google Cloud Run pelo endereço:
+```
+https://lab-cloud-run-goexpert-j2xraeslja-uc.a.run.app/weather/current/<zipcode>
+```
