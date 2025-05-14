@@ -22,7 +22,7 @@ func (h *WeatherHandler) GetWeather(w http.ResponseWriter, r *http.Request) {
 
 	response, err := h.WeatherUseCase.Execute(zipcode)
 	if err != nil {
-		if err.Error() == "cannot find zipcode" {
+		if err.Error() == "can not find zipcode" {
 			http.Error(w, err.Error(), http.StatusNotFound)
 		} else {
 			http.Error(w, err.Error(), http.StatusInternalServerError)

@@ -32,7 +32,7 @@ func (uc *GetWeatherByZipcodeUseCase) Execute(zipcode string) (map[string]float6
 
 	weather, err := fetchWeather(location, uc.WeatherApiKey)
 	if err != nil {
-		return nil, fmt.Errorf("failed to fetch weather data: %w", err)
+		return nil, fmt.Errorf(err.Error())
 	}
 
 	tempK := weather.TempC + 273.15
@@ -68,7 +68,7 @@ func fetchLocation(zipcode string) (string, error) {
 	}
 
 	if data.Localidade == "" {
-		return "", fmt.Errorf("location not found")
+		return "", fmt.Errorf("can not find zipcode")
 	}
 
 	return data.Localidade, nil
